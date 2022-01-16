@@ -57,7 +57,7 @@ void main(List<String> args) {
   }
 
   int num = 28;
-  int divided = (num / 10).toInt();
+  int divided = (num ~/ 10);
   switch (divided) {
     case 3:
       print("Greater or equal to 30");
