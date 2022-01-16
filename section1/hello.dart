@@ -1,3 +1,32 @@
+import 'dart:io';
+
+void TestFunc() {
+  print("DartFunction");
+}
+
+int CalculateArea(int height, int weight) {
+  print(height * weight);
+  return height * weight;
+}
+
+int FatArrow(int num1, int num2) => num1 * num2;
+
+int GreaterNumber(int num1, int num2) => num1 > num2 ? num1 : num2;
+
+//OPTIONAL
+int OptionalExample(int num1, int num2, [int num3 = 0]) {
+  return num1 + num2 + num3;
+}
+
+int OptionalNamedExample({int num1 = 0, int num2 = 0, int num3 = 0}) {
+  return num1 + num2 + num3;
+}
+
+int OptionalNamedExample2(int num0,
+    {int num1 = 0, int num2 = 0, int num3 = 0}) {
+  return num0 + num1 + num2 + num3;
+}
+
 void main(List<String> args) {
   /*
   print("Hello world");
@@ -39,7 +68,7 @@ void main(List<String> args) {
   String? message =
       name ?? surname; // if name is null print surname else print name
   print(message);*/
-
+/*
   String Grade = "BA";
   switch (Grade) {
     case "AA":
@@ -80,4 +109,169 @@ void main(List<String> args) {
   print("$n1 + $n2 = ${n1 + n2}");
   //ghub test
   //ghub test2
+
+  print(n2++);
+  print(n2);
+  print(++n2);
+
+  List NameList = ["koray", "liman", "test"];
+
+  for (String namee in NameList) {
+    print(namee);
+  }
+
+  for (int i = 0; i < NameList.length; i++) {
+    print(NameList[i]);
+  }
+
+  OuterLoop:
+  for (int i = 0; i < 5; i++) {
+    for (int j = 0; j < 5; j++) {
+      if (i == 2) {
+        print("Named Loop");
+        break OuterLoop;
+      }
+    }
+  }
+
+  print("Enter your name:");
+  String? UserName = stdin.readLineSync();
+  print(UserName);
+  print("Enter Your Age:");
+  //int? age = int.parse("35");
+  int? age = int.parse(stdin.readLineSync()!);
+  print(age);
+  TestFunc();
+  int func = CalculateArea(5, 6);
+  print(CalculateArea(5, 6));
+  print(func);
+  print(FatArrow(5, 10));
+  print(GreaterNumber(3, 8));
+  print(OptionalExample(3, 4));
+  print(OptionalExample(3, 4, 5));
+  print(OptionalNamedExample(num2: 5, num1: 6, num3: 7));
+  print(OptionalNamedExample2(4, num3: 5, num2: 6, num1: 7));
+
+  List<int> NumbersList = List.filled(3, 2, growable: false);
+  NumbersList[0] = 1;
+  NumbersList[1] = 2;
+  NumbersList[2] = 3;
+  print(NumbersList);
+
+  List<dynamic> List1 = List<dynamic>.filled(5, 0);
+  List1[0] = "Koray";
+  List1[1] = 10;
+  List1[2] = false;
+  print(List1);
+
+  //DYNAMIC (GROWABLE) LIST
+  List<int> Growable = [];
+  Growable.add(1);
+  Growable.add(2);
+  Growable.add(3);
+  print(Growable);
+/*
+  List<int?> Growable = [];
+  Growable.add(1);
+  Growable.add(2);
+  Growable.add(3);
+  Growable.length = 100;
+  print(Growable);*/
+
+  List<int> Growable1 = [1, 5, 76];
+  Growable1.add(2424);
+  print(Growable1);
+
+  List<int> Growable2 = List.filled(5, 0, growable: true);
+  Growable2.add(999);
+  print(Growable2);
+
+  List<int> Growable3 = List.empty(growable: true);
+  Growable3.add(123);
+  print(Growable3);
+
+  List<int> NumList = [5, 6, 7, 8];
+  if (NumList.isNotEmpty) {
+    print(NumList.first);
+    print(NumList.last);
+    print(NumList.isEmpty);
+    print(NumList.reversed);
+    NumList.remove(6);
+    NumList.removeAt(0);
+    //NumList.clear();
+    if (NumList.contains(8)) {
+      print("exists");
+    }
+    print(NumList.elementAt(1));
+    print(NumList.indexOf(8));
+    NumList.shuffle();
+  }
+  Set<String> Names = Set();
+  Names.add("Koray");
+  Names.add("Koray");
+  Names.add("Koray");
+  Names.add("Ali");
+  Names.add("Ayşe");
+  for (String temp in Names) {
+    print(temp);
+  }
+  if (Names.contains("Koray")) {
+    print("yes");
+  }
+
+  Set<int> NumbersSet = Set.from([
+    1,
+    2,
+    3,
+    4,
+    5,
+    1,
+    2,
+    3,
+    4,
+    1,
+  ]);
+  List<int> EvenNumbers = [2, 4, 6, 8, 10];
+
+  NumbersSet.addAll(EvenNumbers);
+
+  Map<String, int> FieldCode = {"ankara": 23, "bursa": 435, "adana": 24};
+  print(FieldCode);
+  print(FieldCode["bursa"]);
+
+  Map<String, dynamic> Koray = {
+    "Surname": "Liman",
+    "age": 24,
+    "isMarried": false
+  };
+  print(Koray["age"]);
+
+  Map<String, dynamic> EmptyMap = Map();
+  EmptyMap["aa"] = 5;
+  print(EmptyMap);
+
+  for (String Keys in FieldCode.keys) {
+    print(FieldCode[Keys]);
+  }
+  for (dynamic values in FieldCode.values) {
+    print(values);
+  }
+  for (var element in FieldCode.entries) {
+    print("${element.key} ${element.value}");
+  }
+  if (FieldCode.containsKey("bursa")) {
+    print(FieldCode["bursa"]);
+  }
+*/
+  var MyList = [];
+  var MyList1 = <String>[];
+  var MySet = {"sd"};
+  var MyMap = {"asd", 4};
+
+  var List1 = [1, 3, 5];
+  var List2 = [2, 4, 6];
+  var list3 = [List1, List2];
+  //spreads operator
+  var list4 = [...List1, ...List2];
+  print(list4);
 }
