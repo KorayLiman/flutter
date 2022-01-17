@@ -1,4 +1,51 @@
 import 'dart:io';
+import 'privatemethods.dart';
+
+class Car {
+  Car() {}
+
+  Car.secondcons(int y, String, m, bool a) {
+    year = y;
+    Model = m;
+    this.Automatic = a;
+  }
+  //Car(this.year, this.Model, this.Automatic){}
+
+  Car.thirdcons(this.year) {}
+  Car.fourthcons(String Model, bool Automatic) {
+    this.Model = Model;
+    this.Automatic = Automatic;
+  }
+  void CalculateAge() {
+    if (year != null) {
+      print("Age of the car is: ${2022 - year!}");
+    }
+  }
+
+  int? year;
+  String? Model;
+  bool? Automatic;
+}
+
+class Student {
+  Student() {}
+  Student.SecConstructor(this.StudentNumber, this.StudentName, this.IsActive) {}
+
+  factory Student.faccons(int num, String Name, bool Active) {
+    if (num <= 0)
+      return Student.SecConstructor(5, "test", true);
+    else
+      return Student.SecConstructor(num, Name, Active);
+  }
+
+  int StudentNumber = 0;
+  String? StudentName;
+  bool IsActive = false;
+
+  void classfunction() {
+    print("class function");
+  }
+}
 
 void TestFunc() {
   print("DartFunction");
@@ -274,4 +321,19 @@ void main(List<String> args) {
   //spreads operator
   var list4 = [...List1, ...List2];
   print(list4);
+
+  Student student1 = Student();
+  student1.StudentName = "Koray";
+  var student2 = Student();
+  // dynamic student3 = Student();
+
+  var FirstCar = Car.fourthcons("Audi", true);
+
+  Student ff = Student.faccons(0, "lol", true);
+  print(ff.StudentName);
+
+  DatabaseOperations db = DatabaseOperations();
+  print(db.Connect());
+
+  DatabaseOperations db2 = DatabaseOperations.UsernamePassword("kk", "ll");
 }
