@@ -40,3 +40,28 @@ class AdminUser extends User {
     print("AdminUser Logged in");
   }
 }
+
+class Vehicle {
+  String Model = "Undefined";
+  int Age = 000;
+  Vehicle(this.Model, this.Age) {
+    print("Vehicle Constructor");
+  }
+  void TestFunc() {
+    print("$Model $Age");
+  }
+}
+
+class Truck extends Vehicle {
+  int Price;
+  Truck(String Model, int Age, this.Price) : super(Model, Age) {
+    print("Truck Constructor");
+    this.Price = Price;
+  }
+  @override
+  void TestFunc() {
+    // TODO: implement TestFunc
+    super.TestFunc();
+    print(Price);
+  }
+}
