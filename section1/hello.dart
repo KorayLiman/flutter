@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'privatemethods.dart';
 import 'inheritance.dart';
+import 'absractandinterface.dart';
 
 class Car {
   Car() {}
@@ -369,4 +370,7 @@ void main(List<String> args) {
   PolymorphismTest(NU2);
   PolymorphismTest(RNU3);
   PolymorphismTest(AU4);
+
+  Vehicle v11 = Truck("asd", 24, 300);
+  v11.TestFunc();
 }
