@@ -373,4 +373,14 @@ void main(List<String> args) {
 
   Vehicle v11 = Truck("asd", 24, 300);
   v11.TestFunc();
+  StaticVarsandMeths.st = 6;
+
+  print(StaticVarsandMeths.Add(5, 6));
+
+  final int qq = 10;
+  const int ww = 20;
+
+  final List = <int>[1, 2];
+  List.add(3);
+ // List = [2, 3];
 }
