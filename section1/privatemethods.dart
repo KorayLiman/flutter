@@ -24,3 +24,35 @@ class DatabaseOperations {
       return false;
   }
 }
+
+class Client {
+  Client(int Id) {
+    _IdControl(Id);
+  }
+
+  void set SetClientId(int Id) {
+    if (Id > 300)
+      _ClientId = Id;
+    else
+      return;
+  }
+
+  int? get GetClientId {
+    return _ClientId;
+  }
+
+  String get GetClientIdString {
+    return "Id: $_ClientId";
+  }
+
+  String get GetClientIdString2 => "Id: $_ClientId";
+
+  void _IdControl(int Id) {
+    if (Id > 300)
+      _ClientId = Id;
+    else
+      return;
+  }
+
+  int? _ClientId;
+}

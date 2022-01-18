@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'privatemethods.dart';
+import 'inheritance.dart';
 
 class Car {
   Car() {}
@@ -336,4 +337,36 @@ void main(List<String> args) {
   print(db.Connect());
 
   DatabaseOperations db2 = DatabaseOperations.UsernamePassword("kk", "ll");
+
+  Client C1 = Client(500);
+  C1.SetClientId = 600;
+  C1.GetClientId;
+  C1.GetClientIdString;
+
+  User U1 = User();
+  NormalUser NU2 = NormalUser();
+  NU2.email = "asdad";
+  NU2.Login();
+
+  ReadOnlyNormalUser RNU3 = ReadOnlyNormalUser();
+  AdminUser AU4 = AdminUser();
+  User U5 = NormalUser();
+  User U6 = AdminUser();
+
+  List<User> AllUsers = [];
+  AllUsers.add(U1);
+  AllUsers.add(NU2);
+  AllUsers.add(RNU3);
+  AllUsers.add(AU4);
+  AllUsers.add(U5);
+  AllUsers.add(U6);
+
+  void PolymorphismTest(User U) {
+    U.Login();
+  }
+
+  PolymorphismTest(U1);
+  PolymorphismTest(NU2);
+  PolymorphismTest(RNU3);
+  PolymorphismTest(AU4);
 }
