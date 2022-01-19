@@ -52,3 +52,10 @@ class StaticVarsandMeths {
 
   static int Add(int x, int y) => x + y;
 }
+
+class Subscriber {
+  final int Id;
+  final String Name;
+
+  const Subscriber(this.Id, this.Name);
+}

@@ -380,7 +380,17 @@ void main(List<String> args) {
   final int qq = 10;
   const int ww = 20;
 
-  final List = <int>[1, 2];
-  List.add(3);
- // List = [2, 3];
+  final Listt = <int>[1, 2];
+  Listt.add(3);
+  // List = [2, 3];
+
+  const Subscriber S1 = Subscriber(5, "koray");
+  const Subscriber S2 = Subscriber(5, "koray");
+  S1 == S2 ? print("Equal") : print("Not Equal");
+
+  const Subscriber S3 = Subscriber(7, "kordsfay");
+  const Subscriber S4 = Subscriber(8, "koray");
+  S3 == S4 ? print("Equal") : print("Not Equal");
+  final Subscriber S5 = const Subscriber(5, "koray");
+  var S6 = const Subscriber(5, "koray");
 }
